@@ -1,10 +1,48 @@
 package com.example.clement.firstapp;
 
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+
+
+
 /**
  * Created by Clement on 9/7/2017.
  */
 
-public class BubbleSort {
+
+
+public class BubbleSort extends AppCompatActivity{
+
+    private static final String TAG = "BubbleSort";
+    private Button myButton;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        myButton = (Button) findViewById(R.id.button3);
+
+        myButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Log.d(TAG, "onClick: welcome!");
+
+            }
+        });
+
+
+    }
+
+
+
 
     void bubblesort(int arr[])
     {
@@ -17,5 +55,7 @@ public class BubbleSort {
                 arr[j+i] = temp;
             }
     }
+
+
 
 }

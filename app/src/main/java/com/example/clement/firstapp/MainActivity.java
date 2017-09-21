@@ -158,24 +158,22 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 
 
-        //String t1 = Text1.toString();
-        //String tt = String.format("%s %s %s %s %s %s %s %s",number1,number2,number3,number4,number5,number6,
-        //        number7, number8);
+        String t1 = Text1.toString();
+        String tt = String.format("%s %s %s %s %s %s %s %s",number1,number2,number3,number4,number5,number6,
+                number7, number8);
 
 
         int x = list.size();
-        button.setText("Sort");
+        button.setText(tt);
 
         TextView error = (TextView)findViewById(R.id.textView);
 
         if(list.size()<2){
             error.setText("Error, please enter 2 or more input");
-
-        }else if(number1<0&number1>9||number2<0||number2>9||number3<0||number3>9||number4<0||
-                number4>9||number5<0||number5>9||number6<0||number6>9||number7<0||number7>9||number8<0||number8>9
+        }else if(number1<1||number1>9||number2<1||number2>9||number3<1||number3>9||number4<1||
+                number4>9||number5<1||number5>9||number6<1||number6>9||number7<1||number7>9||number8<1||number8>9
         ){
             error.setText("Error, input values must be between 1 and 9");
-
         }
         else{
             Intent startActivity = new Intent(this, DisplayMessageActivity.class);
