@@ -171,7 +171,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             error.setText("Error, please enter 2 or more input");
             button.setText("Next");
 
-        }else if(number1<0&number1>9||number2<0||number2>9||number3<0||number3>9||number4<0||
+        }else if(number1<0||number1>9||number2<0||number2>9||number3<0||number3>9||number4<0||
                 number4>9||number5<0||number5>9||number6<0||number6>9||number7<0||number7>9||number8<0||number8>9
         ){
             error.setText("Error, input values must be between 1 and 9");

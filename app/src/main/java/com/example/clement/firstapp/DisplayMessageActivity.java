@@ -34,13 +34,17 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
 
 
-
+        int counter = 1;
         List<Integer>myList = newActivity.list;
         int listAmt = newActivity.list.size();
-        for (int i = 0; i < listAmt-1; i++) {
+        for (int i = 0; i < listAmt; i++) {
 
             for (int j = 0; j < listAmt - i - 1; j++) {
 
+                builder.append("Step ");
+                builder.append(counter);
+                builder.append("    ");
+                counter++;
 
                 for (int k = 0; k < listAmt; k++) {
                     builder.append(myList.get(k));
