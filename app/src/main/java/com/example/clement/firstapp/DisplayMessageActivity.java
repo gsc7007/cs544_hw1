@@ -37,23 +37,28 @@ public class DisplayMessageActivity extends AppCompatActivity {
         int counter = 1;
         List<Integer>myList = newActivity.list;
         int listAmt = newActivity.list.size();
-        for (int i = 0; i < listAmt; i++) {
+        for (int i = 0; i <= listAmt; i++) {
 
             for (int j = 0; j < listAmt - i - 1; j++) {
 
+                if(i==0 && j ==0){
+                    builder.append("Unsorted ");
+                    for (int k = 0; k < listAmt; k++) {
+                        builder.append(myList.get(k));
+                        builder.append("  ");
+                    }
+                    list.add(builder.toString());
+                    builder.setLength(0);
+                }
+
+
                 builder.append("Step ");
                 builder.append(counter);
-                builder.append("    ");
+                builder.append("      ");
                 counter++;
 
-                for (int k = 0; k < listAmt; k++) {
-                    builder.append(myList.get(k));
-                    builder.append("  ");
 
-                        }
 
-                list.add(builder.toString());
-                builder.setLength(0);
 
                 if (myList.get(j) > myList.get(j + 1)) {
                     int temp = myList.get(j);
@@ -62,6 +67,14 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
 
                 }
+
+                for (int k = 0; k < listAmt; k++) {
+                    builder.append(myList.get(k));
+                    builder.append("  ");
+
+                }
+                list.add(builder.toString());
+                builder.setLength(0);
 
 
 
